@@ -7,5 +7,6 @@ module.exports = {
     secret: process.env.SECRET,
     project_id: process.env.PROJECT_ID,
     project_url: process.env.PROJECT_URL,
-    port: process.env.PORT
+    port: process.env.PORT,
+    temp_pass: process.env.TEMP_PASS
 };

@@ -1,5 +1,5 @@
 const http = require('http');
-const { port } = require('./config');
+const { port, temp_pass } = require('./config');
 const { ds } = require('./api/connection');
 //Import api
 const { getTeachers } = require('./api/teachers/getTeachers')
@@ -11,7 +11,7 @@ const requestListener = function (req, res) {
 
 const server = http.createServer(requestListener);
 server.listen(port, () =>{
-    getTeachers(ds, "ejisselgb", "12345678"); // insecury login
+    getTeachers(ds, "ejisselgb", temp_pass); // insecury login
 });
 
 
