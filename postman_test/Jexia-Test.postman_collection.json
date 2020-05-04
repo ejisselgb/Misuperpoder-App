@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "53ea5995-e9f2-46f5-9450-4d837389ddc3",
+		"name": "Jexia-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_Auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8789715-1eed-47f3-b743-92f24c0eb6c6",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"TOKEN\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"method\": \"{{METHOD}}\",\n\t\"key\": \"{{KEY}}\",\n\t\"secret\": \"{{SECRET}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PROJECT_URL}}/auth",
+					"host": [
+						"{{PROJECT_URL}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Teachers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{TOKEN}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type_identificaton_teacher\": \"CC\",\n\t\"identification_teacher\": \"1122343599\",\n\t\"name_teacher\": \"Test\",\n\t\"last_name_teacher\": \"Test\",\n\t\"username_teacher\": \"test1\",\n\t\"password_teacher\": \"12345678\",\n\t\"email_teacher\": \"test1@gmail.com\",\n\t\"phone_teacher\": 3187381607,\n\t\"grade_teach\": 3\n}"
+				},
+				"url": {
+					"raw": "{{PROJECT_URL}}/ds/Teachers",
+					"host": [
+						"{{PROJECT_URL}}"
+					],
+					"path": [
+						"ds",
+						"Teachers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Teachers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{PROJECT_URL}}/ds/Teachers",
+					"host": [
+						"{{PROJECT_URL}}"
+					],
+					"path": [
+						"ds",
+						"Teachers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
