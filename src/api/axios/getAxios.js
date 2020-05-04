@@ -1,8 +1,8 @@
 //Example getstudent from API url with AXIOS
-const { project_url, method, key, secret } = require('../../config');
+const { project_url, method, key, secret } = require('../../../config');
 const axios = require('axios');
 
-function getStudents(){
+function getAxios(dataset){
 
     let data = {
         method: method,
@@ -12,7 +12,7 @@ function getStudents(){
     
     axios.post(project_url+"/auth", data)
     .then((res) => {
-      getStudentAxios(res.data.access_token);
+        getWithToken(res.data.access_token, dataset);
     })
     .catch((err) => {
       console.log("Error ", err.response.data[0].message, " --- Status ", err.response.status);
@@ -20,7 +20,7 @@ function getStudents(){
 }
 
 
-function getStudentAxios(access_token){
+function getWithToken(access_token, dataset){
 
     let axiosHeader = {
         headers: {
@@ -28,7 +28,7 @@ function getStudentAxios(access_token){
         }
     };
 
-    axios.get(project_url+"/ds/Students", axiosHeader).then(response => {
+    axios.get(project_url+"/ds/"+dataset, axiosHeader).then(response => {
         console.log(response.data);
     })
     .catch((error) => {
@@ -37,5 +37,5 @@ function getStudentAxios(access_token){
 }
 
 module.exports = {
-    getStudents: getStudents
+    getAxios: getAxios
 }
