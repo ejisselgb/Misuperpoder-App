@@ -1,5 +1,5 @@
 const http = require('http');
-const { port, temp_pass } = require('./config');
+const { port } = require('./config');
 const { connectionJexia } = require('./src/connection');
 const { progress_data } = require('./assets/dummy_data/dummyData')
 
@@ -15,7 +15,7 @@ const { chat } = require('./src/chat/chat');
 
 const requestListener = function (req, res) {
   res.writeHead(200);
-  res.end('Server start!!!, port '+ port);
+  res.end('Server Misuperpoder-app start!!!, port '+ port);
 }
 
 
@@ -23,6 +23,7 @@ const server = http.createServer(requestListener);
 server.listen(port, () =>{
 
   let conn = connectionJexia("rtm");
+  console.log("Start connection ", conn);
   //createDataset(conn, "Progress_Student", progress_data);
   //getDataset(conn, "Teachers");
   //deleteDataset(conn, "Teachers", "27258ced-609b-41a9-b7e9-7a040d2b82d9");
@@ -31,7 +32,7 @@ server.listen(port, () =>{
   //getTeachers(ds, "ejisselgb", temp_pass); // insecury login
   //uploadFiles(conn, "Test Image");
   //observableRTC(conn, "Students");
-  chat(conn, "observable");
+  //chat(conn, "observable");
    
 });
 
