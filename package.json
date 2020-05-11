@@ -1,0 +1,29 @@
+{
+  "name": "misuperpoder-app",
+  "version": "1.0.0",
+  "description": "Backend used the Jexia tool",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "jexia-sdk-js": "^4.10.0",
+    "node-fetch": "^2.6.0",
+    "ws": "^7.2.5",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejisselgb/Misuperpoder-App.git"
+  },
+  "author": "Erika Gutierrez Beltran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejisselgb/Misuperpoder-App/issues"
+  },
+  "homepage": "https://github.com/ejisselgb/Misuperpoder-App#readme"
+}

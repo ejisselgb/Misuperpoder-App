@@ -31,7 +31,7 @@ server.listen(port, () =>{
   //getTeachers(ds, "ejisselgb", temp_pass); // insecury login
   //uploadFiles(conn, "Test Image");
   //observableRTC(conn, "Students");
-  //chat(conn, "observable");
+  chat(conn, "observable");
    
 });
 
