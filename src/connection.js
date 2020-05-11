@@ -36,6 +36,15 @@ function connectionJexia(type){
     responseConnection = ds;
 
   }
+  else if(type === "rtm"){
+
+    const rtm = realTime(); 
+
+    jexiaClient().init(credentials, rtm); 
+
+    responseConnection = rtm;
+
+  }
 
   return responseConnection;
 }
