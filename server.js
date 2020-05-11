@@ -22,8 +22,7 @@ const requestListener = function (req, res) {
 const server = http.createServer(requestListener);
 server.listen(port, () =>{
 
-  let conn = connectionJexia("rtm");
-  console.log("Start connection ", conn);
+  let conn = connectionJexia("ds");
   //createDataset(conn, "Progress_Student", progress_data);
   //getDataset(conn, "Teachers");
   //deleteDataset(conn, "Teachers", "27258ced-609b-41a9-b7e9-7a040d2b82d9");
