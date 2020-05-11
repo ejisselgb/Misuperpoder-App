@@ -3,8 +3,8 @@ dotenv.config();
 
 module.exports = {
     method: process.env.METHOD,
-    key: process.env.API_KEY,
-    secret: process.env.API_SECRET,
+    key: process.env.KEY,
+    secret: process.env.SECRET,
     project_id: process.env.PROJECT_ID,
     project_url: process.env.PROJECT_URL,
     port: process.env.PORT,
